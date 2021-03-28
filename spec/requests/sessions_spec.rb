@@ -15,4 +15,13 @@ RSpec.describe "Sessions", type: :request do
       expect(signed_cookie[:auth_token]).to be_blank
     end
   end
+
+  describe "#destroy" do
+    it "deletes the auth_token cookie" do
+      sign_in
+      delete session_path("current_user")
+
+      expect(cookies[:auth_token]).to be_blank
+    end
+  end
 end

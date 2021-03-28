@@ -17,6 +17,6 @@
     </details-dialog>
   </details>
   <div class="Header-item">
-    <button type="button" class="btn">Sign out</button>
+    <%= link_to "Sign out", session_path("current_user"), method: :delete, class: "btn" %>
   </div>
 </header>

@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+  layout "slate"
+
   def new; end
 
   def create

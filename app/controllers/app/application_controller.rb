@@ -1,4 +1,6 @@
 class App::ApplicationController < ApplicationController
+  layout "app"
+
   before_action :authenticate_user
 
   private

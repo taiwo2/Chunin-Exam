@@ -13,6 +13,10 @@ class App::WebLinksController < App::ApplicationController
     end
   end
 
+  def show
+    @web_link = WebLink.find(params[:id])
+  end
+
   private
 
   def web_link_params

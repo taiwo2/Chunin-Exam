@@ -7,7 +7,7 @@
         <h1 class="h2 css-truncate css-truncate-overflow"><%= @web_link.title %></h1>
         <span class="color-text-tertiary"><%= @web_link.original_url %></span>
       </section>
-      <section class="mt-4 d-flex flex-items-center">
+      <section class="mt-4 d-flex flex-items-center" id="web-url-action">
         <%= link_to external_web_link_url(id: @web_link.uid), external_web_link_path(id: @web_link.uid), target: "_blank" %>
         <div class="BtnGroup d-block ml-4">
           <button class="BtnGroup-item btn tooltipped tooltipped-n" aria-label="Copy" type="button">

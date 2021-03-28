@@ -16,20 +16,15 @@
   </section>
   <section class="mt-4 d-flex flex-items-center" id="web-url-action">
     <%= link_to external_web_link_url(id: @web_link.uid), external_web_link_path(id: @web_link.uid), target: "_blank" %>
-    <div class="BtnGroup d-block ml-4">
-      <button
-          data-controller="clipboard"
-          data-clipboard-copyable-value="<%= external_web_link_url(id: @web_link.uid) %>"
-          data-action="clipboard#copy"
-          class="BtnGroup-item btn tooltipped tooltipped-n"
-          aria-label="Copy"
-          type="button"
-          >
-          <%= octicon "clippy" %>
-      </button>
-      <button class="BtnGroup-item btn tooltipped tooltipped-n" aria-label="Edit" type="button">
-        <%= octicon "pencil" %>
-      </button>
-    </div>
+    <button
+      data-controller="clipboard"
+      data-clipboard-copyable-value="<%= external_web_link_url(id: @web_link.uid) %>"
+      data-action="clipboard#copy"
+      class="btn-octicon tooltipped tooltipped-n ml-2"
+      aria-label="Copy"
+      type="button"
+    >
+      <%= octicon "clippy" %>
+    </button>
   </section>
 </div>

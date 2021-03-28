@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_28_081214) do
+ActiveRecord::Schema.define(version: 2021_03_28_091201) do
 
   create_table "users", force: :cascade do |t|
     t.string "email_address", default: "", null: false
@@ -22,4 +22,15 @@ ActiveRecord::Schema.define(version: 2021_03_28_081214) do
     t.index ["email_address"], name: "index_users_on_email_address", unique: true
   end
 
+  create_table "web_links", force: :cascade do |t|
+    t.string "uid", default: "", null: false
+    t.string "original_url", default: "", null: false
+    t.integer "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["uid"], name: "index_web_links_on_uid", unique: true
+    t.index ["user_id"], name: "index_web_links_on_user_id"
+  end
+
+  add_foreign_key "web_links", "users"
 end

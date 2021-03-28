@@ -1,4 +1,4 @@
-<%= form_with model: [:app, @web_link], class: "d-flex flex-items-center flex-justify-between mt-2", data: { remote: true } do |form| %>
+<%= form_with model: [:app, @web_link], id: dom_id(@web_link), class: "d-flex flex-items-center flex-justify-between mt-2", data: { remote: true } do |form| %>
   <%= form.text_field :title, class: "form-control width-full", autocomplete: "off" %>
   <div class="d-flex flex-items-center ml-3">
     <%= form.submit "Save", class: "btn btn-primary" %>

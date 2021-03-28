@@ -1,0 +1,17 @@
+<aside class="col-3 border-right sidebar">
+  <div class="py-2 px-4 border-bottom d-flex flex-items-center flex-justify-between">
+    <span>21 Links</span>
+    <span>Clicks all time</span>
+  </div>
+  <nav class="sidebar-nav">
+    <% current_user.web_links.each do |web_link| %>
+      <%= link_to app_web_link_path(web_link), class: "sidebar-item d-block py-3 px-4 no-underline css-truncate css-truncate-overflow" do %>
+        <span class="f4 color-text-primary css-truncate css-truncate-overflow"><%= web_link.title %></span>
+        <div class="mt-1 d-flex flex-items-center flex-justify-between">
+          <span>bit.ly/232134</span>
+          <span class="color-text-tertiary">6 clicks</span>
+        </div>
+      <% end %>
+    <% end %>
+  </nav>
+</aside>

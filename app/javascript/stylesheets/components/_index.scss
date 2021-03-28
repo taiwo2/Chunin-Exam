@@ -1,0 +1,12 @@
+.sidebar {
+  height: calc(100vh - 64px);
+  background-color: var(--color-bg-canvas-inset);
+}
+
+.sidebar-nav > * + * {
+  border-top: 1px solid var(--color-border-tertiary);
+}
+
+.sidebar-item:hover {
+  background-color: var(--color-bg-canvas);
+}

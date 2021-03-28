@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :sessions, only: %i[new create]
 
   namespace :app do
-    resources :web_links, only: %i[index create show]
+    resources :web_links, only: %i[index create show update]
   end
 
   get "/:id", to: "web_links#show", as: :external_web_link

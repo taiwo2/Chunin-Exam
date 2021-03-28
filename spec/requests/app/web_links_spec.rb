@@ -20,4 +20,15 @@ RSpec.describe "App::WebLinks", type: :request do
       expect(json.dig(:errors, :original_url)).to be_present
     end
   end
+
+  describe "#update" do
+    it "updates the web_link title" do
+      user = create(:user)
+      web_link = create(:web_link, user: user)
+      sign_in(user)
+      patch app_web_link_path(web_link), params: { web_link: { title: "New title" } }
+
+      expect(web_link.reload.title).to eq("New title")
+    end
+  end
 end

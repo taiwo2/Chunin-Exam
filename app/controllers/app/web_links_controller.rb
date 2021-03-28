@@ -18,9 +18,23 @@ class App::WebLinksController < App::ApplicationController
     @web_link = WebLink.find(params[:id])
   end
 
+  def update
+    web_link = WebLink.find(params[:id])
+
+    if web_link.update(web_link_update_params)
+      redirect_to app_web_link_path(web_link)
+    else
+      render json: { errors: web_link.errros }, status: :unprocessable_entity
+    end
+  end
+
   private
 
   def web_link_params
     params.require(:web_link).permit(:original_url)
+  end
+
+  def web_link_update_params
+    params.require(:web_link).permit(:title)
   end
 end

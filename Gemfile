@@ -11,6 +11,7 @@ gem "webpacker", "~> 5.0"
 gem "turbolinks", "~> 5"
 gem "bcrypt", "~> 3.1.7"
 gem "httparty", "~> 0.18.1"
+gem "octicons_helper", "~> 12.1"
 
 gem "bootsnap", ">= 1.4.4", require: false
 

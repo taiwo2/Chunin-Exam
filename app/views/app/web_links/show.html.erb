@@ -8,7 +8,7 @@
         <span class="color-text-tertiary"><%= @web_link.original_url %></span>
       </section>
       <section class="mt-4 d-flex flex-items-center">
-        <a href="#" target="_blank" class="d-block">bit.ly/asldfj</a>
+        <%= link_to external_web_link_url(id: @web_link.uid), external_web_link_path(id: @web_link.uid), target: "_blank" %>
         <div class="BtnGroup d-block ml-4">
           <button class="BtnGroup-item btn tooltipped tooltipped-n" aria-label="Copy" type="button">
             <%= octicon "clippy" %>

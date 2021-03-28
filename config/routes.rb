@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   namespace :app do
     resources :web_links, only: %i[index create show]
   end
+
+  get "/:id", to: "web_links#show", as: :external_web_link
 end

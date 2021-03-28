@@ -8,7 +8,7 @@
       <%= link_to app_web_link_path(web_link), class: "sidebar-item d-block py-3 px-4 no-underline css-truncate css-truncate-overflow" do %>
         <span class="f4 color-text-primary css-truncate css-truncate-overflow"><%= web_link.title %></span>
         <div class="mt-1 d-flex flex-items-center flex-justify-between">
-          <span>bit.ly/232134</span>
+          <span><%= external_web_link_url(id: web_link.uid) %></span>
           <span class="color-text-tertiary">6 clicks</span>
         </div>
       <% end %>

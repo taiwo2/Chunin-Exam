@@ -4,6 +4,6 @@ Rails.application.routes.draw do
   resources :sessions, only: %i[new create]
 
   namespace :app do
-    resources :web_links, only: %i[create]
+    resources :web_links, only: %i[index create]
   end
 end

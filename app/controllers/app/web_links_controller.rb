@@ -8,6 +8,7 @@ class App::WebLinksController < App::ApplicationController
       web_response = WebScraper.new(params.dig(:web_link, :original_url))
       web_title = web_response.fetch_website_title
       web_link.update(title: web_title) if web_title
+      redirect_to app_web_link_path(web_link)
     else
       render json: { errors: web_link.errors }, status: :unprocessable_entity
     end

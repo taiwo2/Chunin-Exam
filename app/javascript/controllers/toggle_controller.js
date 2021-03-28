@@ -6,7 +6,7 @@ export default class extends ApplicationController {
 
   connect() {
     if (this.pageIsPreview) {
-      this.toggle();
+      this.disableRender();
     }
   }
 
@@ -16,6 +16,14 @@ export default class extends ApplicationController {
         element.removeAttribute(this.attributeValue);
       } else {
         element.setAttribute(this.attributeValue, "");
+      }
+    });
+  }
+
+  disableRender() {
+    this.toggleableTargets.forEach((element) => {
+      if (element.hasAttribute(this.attributeValue)) {
+        element.setAttribute("hidden", "");
       }
     });
   }

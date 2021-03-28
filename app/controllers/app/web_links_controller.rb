@@ -1,4 +1,4 @@
-class WebLinksController < ApplicationController
+class App::WebLinksController < App::ApplicationController
   def create
     web_link = current_user.web_links.build(web_link_params)
 

@@ -1,5 +1,5 @@
 class WebLink < ApplicationRecord
-  belongs_to :user
+  belongs_to :user, counter_cache: true
 
   before_validation :generate_random_uid, on: :create
 

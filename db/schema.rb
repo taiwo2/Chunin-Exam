@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 2021_03_28_091201) do
     t.string "email_address", default: "", null: false
     t.string "password_digest", default: "", null: false
     t.string "auth_token", default: "", null: false
+    t.integer "web_links_count", default: 0, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["auth_token"], name: "index_users_on_auth_token", unique: true

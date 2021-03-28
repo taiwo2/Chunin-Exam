@@ -10,7 +10,7 @@ class UsersController < ApplicationController
 
     if user.save
       sign_in(user)
-      redirect_to root_path
+      redirect_to app_web_links_path
     else
       render json: { errors: user.errors }, status: :unprocessable_entity
     end

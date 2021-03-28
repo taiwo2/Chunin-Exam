@@ -1,6 +1,6 @@
 <aside class="col-3 border-right sidebar">
   <div class="py-2 px-4 border-bottom d-flex flex-items-center flex-justify-between">
-    <span>21 Links</span>
+    <span><%= pluralize(current_user.web_links_count, "Link") %></span>
     <span>Clicks all time</span>
   </div>
   <nav class="sidebar-nav">

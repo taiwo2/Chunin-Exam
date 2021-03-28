@@ -5,6 +5,27 @@
       <span>GitHub</span>
     <% end %>
   </div>
+  <details class="Header-item details-reset details-overlay details-overlay-dark">
+    <summary class="btn btn-primary" aria-haspopup="dialog">Create link</summary>
+    <details-dialog class="Box Box--overlay d-flex flex-column anim-fade-in fast color-text-primary">
+      <div class="Box-header">
+        <h3 class="Box-title">Create a shortened link</h3>
+      </div>
+      <form class="Box-body">
+        <div class="form-group m-0">
+          <div class="form-group-header">
+            <label>Website URL</label>
+          </div>
+          <div class="form-group-body">
+            <input type="url" class="form-control width-full">
+          </div>
+        </div>
+      </form>
+      <div class="Box-footer">
+        <button type="button" class="btn btn-primary btn-block">Shorten it</button>
+      </div>
+    </details-dialog>
+  </details>
   <div class="Header-item">
     <button type="button" class="btn">Sign out</button>
   </div>

@@ -10,3 +10,17 @@
 .sidebar-item:hover {
   background-color: var(--color-bg-canvas);
 }
+
+details-dialog {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 0;
+  margin: 10vh auto;
+  z-index: 999;
+  width: 90vw;
+
+  @include breakpoint(sm) {
+    width: 448px;
+  }
+}

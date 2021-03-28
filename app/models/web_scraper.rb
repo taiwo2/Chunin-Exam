@@ -5,8 +5,13 @@ class WebScraper
     @url = url
   end
 
-  def web_title
-    response = HTTParty.get(url)
-    response.body
+  def fetch_website_title
+    response = HTTParty.get(@url)
+
+    if response.code.to_i == 200
+      Nokogiri::HTML::Document.parse(response.body).title
+    else
+      false
+    end
   end
 end

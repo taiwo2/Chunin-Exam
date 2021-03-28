@@ -1,5 +1,11 @@
 class App::WebLinksController < App::ApplicationController
-  def index; end
+  def index
+    if current_user.web_links.size.zero?
+      render :index
+    else
+      redirect_to app_web_link_path(current_user.web_links.first)
+    end
+  end
 
   def create
     web_link = current_user.web_links.build(web_link_params)

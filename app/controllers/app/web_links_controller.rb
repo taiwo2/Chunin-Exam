@@ -8,7 +8,7 @@ class App::WebLinksController < App::ApplicationController
   end
 
   def create
-    web_link = current_user.web_links.build(web_link_params)
+    web_link = current_user.web_links.build(web_link_new_params)
 
     if web_link.save
       web_response = WebScraper.new(params.dig(:web_link, :original_url))
@@ -36,7 +36,7 @@ class App::WebLinksController < App::ApplicationController
 
   private
 
-  def web_link_params
+  def web_link_new_params
     params.require(:web_link).permit(:original_url)
   end
 

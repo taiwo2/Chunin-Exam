@@ -10,7 +10,9 @@
           </button>
         </div>
       </div>
-      <%= render "edit_form" %>
+      <div data-toggle-target="toggleable" hidden>
+        <%= render "edit_form" %>
+      </div>
     </div>
     <span class="color-text-tertiary"><%= @web_link.original_url %></span>
   </section>

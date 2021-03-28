@@ -1,23 +1,6 @@
 <div class="d-flex clearfix">
   <%= render "sidebar" %>
   <main class="col-9 px-6">
-    <div class="py-6 border-bottom">
-      <section>
-        <span class="color-text-tertiary f6 text-uppercase">Created <%= simple_date @web_link.created_at %></span>
-        <h1 class="h2 css-truncate css-truncate-overflow"><%= @web_link.title %></h1>
-        <span class="color-text-tertiary"><%= @web_link.original_url %></span>
-      </section>
-      <section class="mt-4 d-flex flex-items-center" id="web-url-action">
-        <%= link_to external_web_link_url(id: @web_link.uid), external_web_link_path(id: @web_link.uid), target: "_blank" %>
-        <div class="BtnGroup d-block ml-4">
-          <button class="BtnGroup-item btn tooltipped tooltipped-n" aria-label="Copy" type="button">
-            <%= octicon "clippy" %>
-          </button>
-          <button class="BtnGroup-item btn tooltipped tooltipped-n" aria-label="Edit" type="button">
-            <%= octicon "pencil" %>
-          </button>
-        </div>
-      </section>
-    </div>
+    <%= render "details" %>
   </main>
 </div>

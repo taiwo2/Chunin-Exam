@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe "App::ShortenUrls", type: :feature do
+RSpec.describe "App::NewWebLinks", type: :feature do
   it "redirects to web_link show page after shortening the url" do
     user = create(:user)
     feature_sign_in(user)

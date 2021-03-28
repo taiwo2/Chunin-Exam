@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 2021_03_28_091201) do
   create_table "web_links", force: :cascade do |t|
     t.string "uid", default: "", null: false
     t.string "original_url", default: "", null: false
+    t.string "title"
     t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

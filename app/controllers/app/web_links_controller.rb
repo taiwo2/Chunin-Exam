@@ -1,6 +1,6 @@
 class App::WebLinksController < App::ApplicationController
   def index
-    if current_user.web_links.size.zero?
+    if current_user.web_links_count.zero?
       render :index
     else
       redirect_to app_web_link_path(current_user.web_links.first)
@@ -9,20 +9,22 @@ class App::WebLinksController < App::ApplicationController
 
   def create
     skip_authorization
+    web_link = current_user.web_links.build(web_link_new_params)
 
-    WebLink.transaction do
-      web_link = current_user.web_links.build(web_link_new_params)
-
-      if web_link.save
-        web_title = WebScraper.new(params.dig(:web_link, :original_url)).fetch_website_title
-        raise ActiveRecord::Rollback unless web_title
-
-        web_link.update(title: web_title)
-        redirect_to app_web_link_path(web_link)
-      else
-        render json: { errors: web_link.errors }, status: :unprocessable_entity
-      end
+    if web_link.invalid?
+      web_link.errors.add("original_url", "is invalid")
+      return render json: { errors: web_link.errors }, status: :unprocessable_entity
     end
+
+    web_title = WebScraper.new(params.dig(:web_link, :original_url)).fetch_website_title
+    unless web_title
+      web_link.errors.add("original_url", "is invalid")
+      return render json: { errors: web_link.errors }, status: :unprocessable_entity
+    end
+
+    web_link.save
+    web_link.update(title: web_title)
+    redirect_to app_web_link_path(web_link)
   end
 
   def show

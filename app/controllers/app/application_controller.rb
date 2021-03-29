@@ -2,6 +2,7 @@ class App::ApplicationController < ApplicationController
   layout "app"
 
   before_action :authenticate_user
+  after_action :verify_authorized, except: %i[index] # rubocop:disable Rails/LexicallyScopedActionFilter, Lint/RedundantCopDisableDirective
 
   private
 

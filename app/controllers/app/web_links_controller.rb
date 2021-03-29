@@ -8,6 +8,8 @@ class App::WebLinksController < App::ApplicationController
   end
 
   def create
+    skip_authorization
+
     WebLink.transaction do
       web_link = current_user.web_links.build(web_link_new_params)
 
@@ -25,10 +27,12 @@ class App::WebLinksController < App::ApplicationController
 
   def show
     @web_link = WebLink.find(params[:id])
+    authorize @web_link
   end
 
   def update
     web_link = WebLink.find(params[:id])
+    authorize web_link
 
     if web_link.update(web_link_update_params)
       redirect_to app_web_link_path(web_link)
@@ -39,6 +43,8 @@ class App::WebLinksController < App::ApplicationController
 
   def destroy
     web_link = WebLink.find(params[:id])
+    authorize web_link
+
     web_link.destroy
     redirect_to app_web_links_path
   end

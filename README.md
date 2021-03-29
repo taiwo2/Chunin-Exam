@@ -1,6 +1,6 @@
 # Link shortener
 
-> This project acts as a medium to complete the **Helpjuice Chunin Exam** assessment.
+> This project acts as a medium to complete the **Helpjuice Chunin Exam**.
 
 ## Getting started
 

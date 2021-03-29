@@ -12,7 +12,7 @@
         <span class="f4 color-text-primary css-truncate css-truncate-overflow"><%= web_link.title %></span>
         <div class="mt-1 d-flex flex-items-center flex-justify-between">
           <span class="css-truncate css-truncate-overflow"><%= external_web_link_url(id: web_link.uid) %></span>
-          <span class="color-text-tertiary ml-2">6 clicks</span>
+          <span class="color-text-tertiary ml-2"><%= pluralize(web_link.visit_count, "click") %></span>
         </div>
       <% end %>
     <% end %>

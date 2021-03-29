@@ -1,11 +1,24 @@
 <div data-controller="sidebar" class="d-flex clearfix">
   <%= render "sidebar" %>
   <main class="width-full col-lg-9 px-3 px-lg-6">
-    <div class="py-3 border-bottom py-lg-6">
+    <div class="pt-3 pt-lg-6">
       <button type="button" data-action="sidebar#show" class="close-button mb-2 d-lg-none">
         <%= octicon "three-bars", height: 20 %>
       </button>
       <%= render "details" %>
+    </div>
+    <hr class="my-3">
+    <div>
+      <h4><%= pluralize(@web_link.visit_count, "click") %></h4>
+    </div>
+    <hr class="my-3">
+    <div class="d-md-flex gutter clearfix">
+      <div class="col-md-6">
+        <%= render "stats", stat_title: "Browsers used", stat_hash: @web_link.browser_properties %>
+      </div>
+      <div class="col-md-6 mt-4 mt-md-0">
+        <%= render "stats", stat_title: "Device used", stat_hash: @web_link.device_properties %>
+      </div>
     </div>
   </main>
 </div>

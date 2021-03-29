@@ -7,7 +7,23 @@ class WebLink < ApplicationRecord
 
   validates :original_url, format: { with: VALID_URL_REGEX }
 
+  def browser_properties
+    joined_visits.group(:browser).count
+  end
+
+  def device_properties
+    joined_visits.group(:device_type).count
+  end
+
+  def visit_count
+    Ahoy::Event.where(properties: { title: uid }).count
+  end
+
   private
+
+  def joined_visits
+    Ahoy::Visit.joins(:events).where(events: { properties: { title: uid } })
+  end
 
   def generate_random_uid
     generate_token(:uid)

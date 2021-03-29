@@ -14,8 +14,10 @@
       <%= render "shared/blankslate",
         narrow: true,
         title: "Your web link hasn't been clicked",
-        description: "Your web link's stats will show here if someone clicks your shortened url."
+        description: "Your web link's stats will show here if someone clicks your shortened url, or if you click it." do
       %>
+        <%= link_to "Click me", external_web_link_path(id: @web_link.uid), target: "_blank", class: "btn btn-primary" %>
+      <% end %>
     <% end %>
   </main>
 </div>

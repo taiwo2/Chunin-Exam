@@ -1,6 +1,6 @@
 <div data-controller="sidebar" class="d-flex clearfix">
   <%= render "sidebar" %>
-  <main class="width-full col-lg-9 px-3 px-lg-6 py-3 py-lg-6">
+  <main class="overflow-y-auto width-full col-lg-9 px-3 px-lg-6 py-3 py-lg-6" style="height: calc(100vh - 64px)">
     <div>
       <button type="button" data-action="sidebar#show" class="close-button mb-2 d-lg-none">
         <%= octicon "three-bars", height: 20 %>

@@ -11,7 +11,7 @@
     <%= javascript_pack_tag "application", "data-turbolinks-track": "reload" %>
   </head>
 
-  <body>
+  <body class="overflow-y-hidden d-flex flex-column">
     <%= render "headers/app" %>
     <%= yield %>
   </body>

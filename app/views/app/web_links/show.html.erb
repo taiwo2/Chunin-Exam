@@ -8,30 +8,14 @@
       <%= render "details" %>
     </div>
     <hr class="my-3">
-    <div>
-      <h4><%= pluralize(@web_link.visit_count, "click") %></h4>
-      <div class="mt-4">
-        <%= line_chart @web_link.created_at_properties %>
-      </div>
-    </div>
-    <hr class="my-3">
-    <div class="d-lg-flex gutter clearfix">
-      <div class="col-lg-6">
-        <% unless @web_link.browser_properties.count.zero? %>
-          <h4>Browser properties</h4>
-          <div class="mt-4">
-            <%= pie_chart @web_link.browser_properties %>
-          </div>
-        <% end %>
-      </div>
-      <div class="col-lg-6 mt-4 mt-lg-0">
-        <% unless @web_link.device_properties.count.zero? %>
-          <h4>Device properties</h4>
-          <div class="mt-4">
-            <%= pie_chart @web_link.device_properties %>
-          </div>
-        <% end %>
-      </div>
-    </div>
+    <% if @web_link.visit_count.positive? %>
+      <%= render "stats", web_link: @web_link %>
+    <% else %>
+      <%= render "shared/blankslate",
+        narrow: true,
+        title: "Your web link hasn't been clicked",
+        description: "Your web link's stats will show here if someone clicks your shortened url."
+      %>
+    <% end %>
   </main>
 </div>

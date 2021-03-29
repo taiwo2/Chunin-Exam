@@ -1,0 +1,21 @@
+<div>
+  <h4><%= pluralize(web_link.visit_count, "click") %></h4>
+  <div class="mt-4">
+    <%= line_chart web_link.created_at_properties %>
+  </div>
+</div>
+<hr class="my-3">
+<div class="d-lg-flex gutter clearfix">
+  <div class="col-lg-6">
+    <h4>Browser properties</h4>
+    <div class="mt-4">
+      <%= pie_chart web_link.browser_properties %>
+    </div>
+  </div>
+  <div class="col-lg-6 mt-4 mt-lg-0">
+    <h4>Device properties</h4>
+    <div class="mt-4">
+      <%= pie_chart web_link.device_properties %>
+    </div>
+  </div>
+</div>

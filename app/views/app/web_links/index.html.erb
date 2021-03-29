@@ -1,9 +1,7 @@
-<div class="blankslate">
-  <%= image_tag "web-link", alt: "web link", class: "mb-3" %>
-  <h3 class="mb-1">You do not seem to have any web links.</h3>
-  <p>
-    Web links help you shorten your regular links and can be useful for minimizing word count on certain websites, such as Twitter.
-  </p>
+<%= render "shared/blankslate",
+  title: "You do not seem to have any web links.",
+  description: "Web links help you shorten your regular links and can be useful for minimizing word count on certain websites, such as Twitter." do
+%>
   <details class="details-reset details-overlay details-overlay-dark">
     <summary class="btn btn-primary my-3" aria-haspopup="dialog">Create my first web link</summary>
     <details-dialog class="Box Box--overlay d-flex flex-column anim-fade-in fast color-text-primary text-left">
@@ -15,4 +13,4 @@
       </div>
     </details-dialog>
   </details>
-</div>
+<% end %>

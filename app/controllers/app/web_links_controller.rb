@@ -8,15 +8,18 @@ class App::WebLinksController < App::ApplicationController
   end
 
   def create
-    web_link = current_user.web_links.build(web_link_new_params)
+    WebLink.transaction do
+      web_link = current_user.web_links.build(web_link_new_params)
 
-    if web_link.save
-      web_response = WebScraper.new(params.dig(:web_link, :original_url))
-      web_title = web_response.fetch_website_title
-      web_link.update(title: web_title) if web_title
-      redirect_to app_web_link_path(web_link)
-    else
-      render json: { errors: web_link.errors }, status: :unprocessable_entity
+      if web_link.save
+        web_title = WebScraper.new(params.dig(:web_link, :original_url)).fetch_website_title
+        raise ActiveRecord::Rollback unless web_title
+
+        web_link.update(title: web_title)
+        redirect_to app_web_link_path(web_link)
+      else
+        render json: { errors: web_link.errors }, status: :unprocessable_entity
+      end
     end
   end
 

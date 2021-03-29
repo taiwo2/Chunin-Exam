@@ -1,32 +1,30 @@
-<div class="py-6 border-bottom">
-  <section>
-    <span class="color-text-tertiary f6 text-uppercase">Created <%= simple_date @web_link.created_at %></span>
-    <div data-controller="toggle" data-toggle-attribute-value="hidden">
-      <div class="d-flex flex-items-center" data-toggle-target="toggleable">
-        <h1 class="h2 css-truncate css-truncate-overflow"><%= @web_link.title %></h1>
-        <div class="ml-3">
-          <button type="button" class="btn" data-action="toggle#toggle">
-            <%= octicon "pencil" %>
-          </button>
-        </div>
-      </div>
-      <div data-toggle-target="toggleable" hidden>
-        <%= render "edit_form" %>
+<section>
+  <span class="color-text-tertiary f6 text-uppercase">Created <%= simple_date @web_link.created_at %></span>
+  <div data-controller="toggle" data-toggle-attribute-value="hidden">
+    <div class="d-flex flex-items-center" data-toggle-target="toggleable">
+      <h1 class="h2 css-truncate css-truncate-overflow"><%= @web_link.title %></h1>
+      <div class="ml-3">
+        <button type="button" class="btn" data-action="toggle#toggle">
+          <%= octicon "pencil" %>
+        </button>
       </div>
     </div>
-    <span class="color-text-tertiary"><%= @web_link.original_url %></span>
-  </section>
-  <section class="mt-4 d-flex flex-items-center" id="web-url-action">
-    <%= link_to external_web_link_url(id: @web_link.uid), external_web_link_path(id: @web_link.uid), target: "_blank" %>
-    <button
-      data-controller="clipboard"
-      data-clipboard-copyable-value="<%= external_web_link_url(id: @web_link.uid) %>"
-      data-action="clipboard#copy"
-      class="btn-octicon tooltipped tooltipped-n ml-2"
-      aria-label="Copy"
-      type="button"
-    >
-      <%= octicon "clippy" %>
-    </button>
-  </section>
-</div>
+    <div data-toggle-target="toggleable" hidden>
+      <%= render "edit_form" %>
+    </div>
+  </div>
+  <span class="color-text-tertiary"><%= @web_link.original_url %></span>
+</section>
+<section class="mt-4 d-flex flex-items-center" id="web-url-action">
+  <%= link_to external_web_link_url(id: @web_link.uid), external_web_link_path(id: @web_link.uid), target: "_blank" %>
+  <button
+    data-controller="clipboard"
+    data-clipboard-copyable-value="<%= external_web_link_url(id: @web_link.uid) %>"
+    data-action="clipboard#copy"
+    class="btn-octicon tooltipped tooltipped-n ml-2"
+    aria-label="Copy"
+    type="button"
+  >
+    <%= octicon "clippy" %>
+  </button>
+</section>

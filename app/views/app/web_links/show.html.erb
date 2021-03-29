@@ -1,6 +1,11 @@
-<div class="d-flex clearfix">
+<div data-controller="sidebar" class="d-flex clearfix">
   <%= render "sidebar" %>
-  <main class="col-9 px-6">
-    <%= render "details" %>
+  <main class="width-full col-lg-9 px-3 px-lg-6">
+    <div class="py-3 border-bottom py-lg-6">
+      <button type="button" data-action="sidebar#show" class="close-button mb-2 d-lg-none">
+        <%= octicon "three-bars", height: 20 %>
+      </button>
+      <%= render "details" %>
+    </div>
   </main>
 </div>

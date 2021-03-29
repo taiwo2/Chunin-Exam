@@ -1,6 +1,23 @@
 .sidebar {
   height: calc(100vh - 64px);
   background-color: var(--color-bg-canvas-inset);
+  position: fixed;
+  left: 0;
+  max-width: 448px;
+  width: 100%;
+  z-index: 10;
+  transform: translateX(-200%);
+  transition: all 150ms ease-in-out;
+
+  @include breakpoint(lg) {
+    position: static;
+    display: block;
+    transform: translateX(0);
+  }
+
+  &.active {
+    transform: translateX(0);
+  }
 }
 
 .sidebar-nav > * + * {

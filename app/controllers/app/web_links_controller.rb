@@ -37,6 +37,7 @@ class App::WebLinksController < App::ApplicationController
   def destroy
     web_link = WebLink.find(params[:id])
     web_link.destroy
+    redirect_to app_web_links_path
   end
 
   private

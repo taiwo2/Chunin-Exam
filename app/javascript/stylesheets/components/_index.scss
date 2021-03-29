@@ -41,3 +41,9 @@ details-dialog {
     width: 448px;
   }
 }
+
+.Popover {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}

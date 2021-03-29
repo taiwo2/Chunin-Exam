@@ -17,14 +17,30 @@
 </section>
 <section class="mt-4 d-flex flex-items-center" id="web-url-action">
   <%= link_to external_web_link_url(id: @web_link.uid), external_web_link_path(id: @web_link.uid), target: "_blank" %>
-  <button
-    data-controller="clipboard"
-    data-clipboard-copyable-value="<%= external_web_link_url(id: @web_link.uid) %>"
-    data-action="clipboard#copy"
-    class="btn-octicon tooltipped tooltipped-n ml-2"
-    aria-label="Copy"
-    type="button"
-  >
-    <%= octicon "clippy" %>
-  </button>
+  <div class="BtnGroup ml-2">
+    <button
+      data-controller="clipboard"
+      data-clipboard-copyable-value="<%= external_web_link_url(id: @web_link.uid) %>"
+      data-action="clipboard#copy"
+      class="BtnGroup-item btn tooltipped tooltipped-n border-right-0"
+      aria-label="Copy"
+      type="button"
+    >
+      <%= octicon "clippy" %>
+    </button>
+    <div data-controller="toggle" data-toggle-attribute-value="hidden" class="position-relative BtnGroup-item">
+      <button type="button" data-action="toggle#toggle" class="rounded-left-0 btn tooltipped tooltipped-n" aria-label="Delete">
+        <%= octicon "trash" %>
+      </button>
+      <div class="Popover" data-toggle-target="toggleable" hidden>
+        <div class="Popover-message text-left p-3 mt-2 mx-auto Box color-shadow-large">
+          <h4 class="mb-2">Are you sure?</h4>
+          <p>People will be redirected to 404 page.</p>
+          <%= form_with url: app_web_link_path(@web_link), method: :delete do |form| %>
+            <%= form.submit "Delete it", id: "delete-web-link", class: "btn btn-danger btn-block mt-2 text-bold" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>

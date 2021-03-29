@@ -21,7 +21,7 @@
 - View your link stats with the help of charts
 - Create, edit, destroy shortened URLs
 - User authorization to prevent unnecessary access
-- Reponsive website
+- Responsive website
 
 ## App flow
 

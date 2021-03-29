@@ -14,7 +14,7 @@ gem "httparty", "~> 0.18.1"
 gem "octicons_helper", "~> 12.1"
 gem "ahoy_matey"
 gem "chartkick"
-
+gem "groupdate"
 gem "bootsnap", ">= 1.4.4", require: false
 
 group :development, :test do

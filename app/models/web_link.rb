@@ -15,6 +15,10 @@ class WebLink < ApplicationRecord
     joined_visits.group(:device_type).count
   end
 
+  def created_at_properties
+    joined_visits.group_by_day(:started_at).count
+  end
+
   def visit_count
     Ahoy::Event.where(properties: { title: uid }).count
   end

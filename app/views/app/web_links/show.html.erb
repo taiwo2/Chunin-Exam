@@ -1,7 +1,7 @@
 <div data-controller="sidebar" class="d-flex clearfix">
   <%= render "sidebar" %>
-  <main class="width-full col-lg-9 px-3 px-lg-6">
-    <div class="pt-3 pt-lg-6">
+  <main class="width-full col-lg-9 px-3 px-lg-6 py-3 py-lg-6">
+    <div>
       <button type="button" data-action="sidebar#show" class="close-button mb-2 d-lg-none">
         <%= octicon "three-bars", height: 20 %>
       </button>
@@ -10,14 +10,27 @@
     <hr class="my-3">
     <div>
       <h4><%= pluralize(@web_link.visit_count, "click") %></h4>
+      <div class="mt-4">
+        <%= line_chart @web_link.created_at_properties %>
+      </div>
     </div>
     <hr class="my-3">
-    <div class="d-md-flex gutter clearfix">
-      <div class="col-md-6">
-        <%= render "stats", stat_title: "Browsers used", stat_hash: @web_link.browser_properties %>
+    <div class="d-lg-flex gutter clearfix">
+      <div class="col-lg-6">
+        <% unless @web_link.browser_properties.count.zero? %>
+          <h4>Browser properties</h4>
+          <div class="mt-4">
+            <%= pie_chart @web_link.browser_properties %>
+          </div>
+        <% end %>
       </div>
-      <div class="col-md-6 mt-4 mt-md-0">
-        <%= render "stats", stat_title: "Device used", stat_hash: @web_link.device_properties %>
+      <div class="col-lg-6 mt-4 mt-lg-0">
+        <% unless @web_link.device_properties.count.zero? %>
+          <h4>Device properties</h4>
+          <div class="mt-4">
+            <%= pie_chart @web_link.device_properties %>
+          </div>
+        <% end %>
       </div>
     </div>
   </main>

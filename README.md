@@ -4,9 +4,9 @@
 
 ## Getting started
 
-- Clone the repo: `https://github.com/EmirVatric/Chunin-Exam.git`
+- Clone the repo: `https://github.com/abeidahmed/Chunin-Exam.git`
 - `cd` into the directory
-- `git pull origin abeidahmed:url-shortener`
+- `git pull origin url-shortener`
 - Run `bundle install` and `yarn install` to install all the dependencies
 - You may need to run `rails db:create db:migrate` to setup the db
 - Run `rails s` to start the server

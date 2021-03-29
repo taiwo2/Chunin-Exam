@@ -17,7 +17,7 @@
 
 - User authentication
 - Shorten long URLs
-- Analyze your link clicks (e.g.: link click count, browser used, device used)
+- Analyze your link clicks (e.g.: link click count, browser used, devices used)
 - View your link stats with the help of charts
 - Create, edit, destroy shortened URLs
 - User authorization to prevent unnecessary access

@@ -31,4 +31,15 @@ RSpec.describe "App::WebLinks", type: :request do
       expect(web_link.reload.title).to eq("New title")
     end
   end
+
+  describe "#destroy" do
+    it "destroys the web_link" do
+      user = create(:user)
+      web_link = create(:web_link, user: user)
+      sign_in(user)
+      delete app_web_link_path(web_link)
+
+      expect { WebLink.find(web_link.id) }.to raise_error(ActiveRecord::RecordNotFound)
+    end
+  end
 end

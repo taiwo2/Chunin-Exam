@@ -34,6 +34,11 @@ class App::WebLinksController < App::ApplicationController
     end
   end
 
+  def destroy
+    web_link = WebLink.find(params[:id])
+    web_link.destroy
+  end
+
   private
 
   def web_link_new_params

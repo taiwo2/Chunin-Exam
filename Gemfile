@@ -16,6 +16,7 @@ gem "ahoy_matey"
 gem "chartkick"
 gem "groupdate"
 gem "bootsnap", ">= 1.4.4", require: false
+gem "pundit", "~> 2.1"
 
 group :development, :test do
   gem "byebug", platforms: %i[mri mingw x64_mingw]
@@ -25,6 +26,7 @@ group :development, :test do
   gem "rspec-rails", "~> 4.0", ">= 4.0.2"
   gem "shoulda-matchers", "~> 4.4", ">= 4.4.1"
   gem "factory_bot_rails", "~> 6.1"
+  gem "pundit-matchers", "~> 1.6"
 end
 
 group :development do

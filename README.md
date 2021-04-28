@@ -1,100 +1,60 @@
-# Helpjuice Chunin Exam
+# Link For shortening APP
 
-Welcome to the Helpjuice code challenge. This repository includes a new Rails app used for assessment and testing purposes only.
+> This project acts as a medium to complete the **Helpjuice Chunin Exam**.
 
-## Context
+## Getting started
 
-[Helpjuice](https://www.helpjuice.com/) provides a reasonable overview and description of who are we and what we do.
+- Clone the repo: `https://github.com/taiwo2/Chunin-Exam.git`
+- `cd` into the directory
+- `git pull origin url-shortening-app`
+- Run `bundle install` and `yarn install` to install all the dependencies
+- You may need to run `rails db:create db:migrate` to setup the db
+- Run `rails s` to start the server
+- Run `ruby bin/webpack-dev-server` to start the webpack server
+- Open `localhost:3000` in your browser
 
-Helpjuice empowers large and small companies (such as Amazon.com, Hertz, Virgin Mobile, Shipt.com, Philips, US Government, and thousands of others) to deliver instant support using our software.
+## Features
 
-We're a smaller, yet growing software company, where everyone wears multiple hats. It's a team of excellent people, who are all willing to help each other because it's the way we work / our culture.
+- User authentication
+- Shorten long URLs
+- Analyze your link clicks (e.g.: link click count, browser used, devices used)
+- View your link stats with the help of charts
+- Create, edit, destroy shortened URLs
+- User authorization to prevent unnecessary access
+- Responsive website
 
-We care about our customers and are a very transparent company in how we build software (e.g.: our product roadmap is public & customer-driven)
+## App flow
 
+- First you need to sign up or sign in
+- You'll be redirected to an app page, where you can shorten a URL
+- After creating you'll be redirected to URL show page
+- The show page normally lists all the stats about the link, if it has been clicked
+- Click on the link, you'll be redirected to the actual website
+- Navigate back to URL show page, refresh the browser if you haven't. You can now see all the stats that are available
 
-## Getting Started
-
-```bash
-# Start your Rails server
-rails server
-
-# In a separate tab
-bin/webpack-dev-server
-```
-
-## Tasks
-
-### 1. Build a URL shoretner app
-
-A URL shortener is an online application that converts a regular URL into its condensed format.
-
-The user only has to copy the full URL of a website and paste it into the URL shortening tool to come up with an abbreviated version that is around 10 to 20 characters long.
-
-Example:
-
-Regular URL - http://www.nytimes.com/2012/08/09/us/more-casinos-and-internet-gambling-threaten-shakopee-tribe.html?_r=1&hp
-
-Shortened URL - http://`your-domain`/P7eg6B
-
-Shortened URL then redirects to the original URL.
-
-**Plus points for challengers are able to track as much of analytics as possible!**
-
-### 2. Stimulus
-
+## Stimulus
 Install and use stimulus to show off some of that JavaScript magic.
 
 Please try to put as much of your JavaScript into Stimulus controllers as possible!
 
-### 3. Specs
+## Tests
 
-Install and configure RSpec and Capybara to test your coode.
+Tested using:
 
-**Plus points for challengers with best code coverage!**
+- RSpec
+- Capybara
+- Pundit matchers
 
-### 4. Write documentation
+I have tried to cover almost all the cases. Run `bundle exec rspec` to run the test suite.
 
-Rewrite this readme to describe your app and explain your approuch. Give as much info to the reviewers as possible!
+## Author's contact info
 
-## Tips
+### Taiwo Adetona
 
-- Submit your PR as you would in a professional environment
-- Keep your commit history and your diffs clean
-- Try to write clean code
+- GitHub: [Taiwo Adetona](https://github.com/taiwo2)
+- Twitter: [@Adetona4](https://twitter.com/TaiwoAdetona4)
+- LinkedIn: [Taiwo Adetona](https://www.linkedin.com/in/taiwo-adetona/)
 
-## How do I submit a Pull Request?
+## Acknowledgement
 
-Since this a public repository, submitting a Pull Request will not be the same as when you're a collaborator. The instructions below will help you push the changes to the repo.
-
-- Fork the project to your personal Github.
-- Clone the challenge to your local from your new forked repo in your personal git account.
-
-  ```
-    git clone <forked account>
-
-    example: git clone https://github.com/EmirVatric/Chunin-Exam
-  ```
-
-- Any changes made in the original repository should not be synced to your forked repository. The following commands enable us to track the original repository as a remote of the fork.
-
-   ```
-     git remote add --track master upstream https://github.com/EmirVatric/Chunin-Exam.git
-     git fetch upstream
-   ```
-
-- Create a new branch for your changes.
-
-   ```
-    git checkout -b <your-branch-name> upstream/master
-   ```
-
-- Make your changes, stage, and commit files necessary.
-- Push the changes to remote.
-
-  ```
-   git push -u origin <your-branch-name> origin
-  ```
-
-- You can now go to Github, and submit a PR with necessary details.
-- Happy Coding! Please don't hesitate to shoot an email to the recruitment team if you have any issues while pushing the code.
+Thank you for giving me the chance to prove my skills.

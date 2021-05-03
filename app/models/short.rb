@@ -11,7 +11,7 @@ class Short < ApplicationRecord
     if term
       where('url LIKE ?', "%#{term}%").order('id ASC')
     else
-      order('id ASC') 
+      order('id ASC')
     end
   end
 

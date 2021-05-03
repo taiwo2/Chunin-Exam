@@ -1,9 +1,6 @@
 class ShortsController < ApplicationController
- before_action :set_short, only: [:show]
-
- 
-  def show
-  end
+  before_action :set_short, only: [:show]
+  def show; end
 
   def new
     @short = Short.new
@@ -22,15 +19,13 @@ class ShortsController < ApplicationController
     end
   end
 
-
   private
-  
-    def set_short
-      @short = Short.find(params[:id])
-    end
 
-    def short_params
-      params.require(:short).permit(:url)
-    end
+  def set_short
+    @short = Short.find(params[:id])
+  end
 
+  def short_params
+    params.require(:short).permit(:url)
+  end
 end

@@ -1,0 +1,241 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+/* Variables y demás */
+
+$dark: #000;
+
+@mixin box_sizing {
+  -moz-box-sizing:    border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing:         border-box;
+}
+
+
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+  @include box_sizing;
+}
+
+
+/* Estilo general */
+
+body {
+  padding-top: 40px;
+  margin-top: 33px;
+}
+
+section {
+  overflow: hidden;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.center {
+  text-align: center;
+  h1 {
+    margin-bottom: 10px;
+  }
+}
+
+a:hover{
+    text-decoration: none;
+}
+
+/* Estilo del header */
+
+#logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 1.7em;
+  color: $dark;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  padding-top: 10px;
+  font-weight: bold;
+  &:hover {
+  color:$dark;
+  text-decoration: none;
+  }
+}
+
+/* Estilo del footer */
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid $dark;
+  color: $dark;
+  a {
+    color: $dark;
+    &:hover {
+      color: $dark;
+    }
+  }
+  small {
+    float: left;
+  }
+  ul {
+    float: right;
+    list-style: none;
+    li {
+      float: left;
+      margin-left: 15px;
+    }
+  }
+}
+
+/* Estilo de los mensajes de error */
+
+#error_explanation {
+  color: red;
+  ul {
+    color: red;
+    margin: 0 0 30px 0;
+  }
+}
+
+.field_with_errors {
+  @extend .has-error;
+  .form-control {
+    color: $state-danger-text;
+  }
+}
+
+/* Estilo del boton de incio */
+
+.boton_inicio {
+  margin-top: 45px;
+  padding-top: 5px;
+  color: $dark;
+}
+
+/* Estilo de la paginación */
+.pagination {
+  margin: 0;
+}
+
+.full-screen{
+  min-height: calc(100vh - 174px);
+}
+
+#margen{
+  margin-top: 20px;
+}
+
+label{
+  font-family: inherit;
+  font-weight: 500;
+  line-height: 1.1;
+  color: inherit;
+  font-size: 18px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* Estilo del correo del header */
+
+#usuario{
+  margin-top: 7px;
+  margin-right: 5px;
+}
+
+/* Estilo del formulario */
+
+.checkbox {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 20px;
+  span {
+    margin-left: 5px;
+    font-weight: normal;
+  }
+}
+
+#session_remember_me {
+  width: auto;
+  margin-left: 0;
+}
+
+/* Estilo del botón de Sign up */
+
+#signup {
+  margin-top: 20px;
+}
+
+/* Estilo de los botones de show user */
+
+#espacio {
+  margin-right: 5px;
+}
+
+/* Estilo del boton de búsqueda */
+
+#busqueda {
+  width: 400px;
+}
+
+#busqueda2 {
+  margin-right: 8px;
+  margin-bottom: 10px;
+}
+
+/* Estilo botón subir foto */
+
+.btn-file input[type=file] {
+    position: absolute;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    cursor: inherit;
+    display: block;
+}
+
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+
+#prev {
+  width: 400px;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*Estilo borde imagen de anuncio */
+
+#borde {
+  border-radius: 25px;
+  border: 2px solid #FFCC00;
+  padding: 20px;
+}
+
+/* Estilos de tablas */
+.wrap-word {
+  overflow-wrap: break-word;
+}
+
+.max-length{
+  max-width: 300px;
+}
+
+
+@media screen and (max-width: 710px) {
+  .scroll-x{
+    overflow-x: scroll;
+  }
+}
+
+#title{
+  padding: 12px;
+}

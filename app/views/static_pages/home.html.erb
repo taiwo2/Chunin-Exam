@@ -1,2 +1,29 @@
-<h1>StaticPages#home</h1>
-<p>Find me in app/views/static_pages/home.html.erb</p>
+<% provide(:title, "| Home") %>
+
+<div class="container">
+  
+  <div class="row">
+    <div class="col-md-12">
+      <div class="page-header center">
+        <h1>Shorten your links easily <small> Short and see an URL here</small></h1>
+      </div>
+    </div>
+  </div>
+
+ <%= render 'shared/show_flash' %>
+
+  <div class="row">  
+    <div class="col-md-8 col-md-offset-2 center">
+      <%= render 'shorts/form' %>
+    </div>
+  </div>    
+  
+  <% if flash.notice == 'Short was successfully created.' %>
+    <div class="row" id="margen">
+      <div class="col-md-8 col-md-offset-2 center">
+        <%= render 'shorts/home_form' %>
+      </div>
+    </div>
+  <% end %>
+
+</div>

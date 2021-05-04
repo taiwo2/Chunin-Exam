@@ -40,6 +40,10 @@ group :test do
   gem 'selenium-webdriver'
   gem 'simplecov'
   gem 'webdrivers'
+  gem 'capybara-email'
+  gem "show_me_the_cookies"
+  gem "pundit-matchers", "~> 1.6"
+
   
 end
 

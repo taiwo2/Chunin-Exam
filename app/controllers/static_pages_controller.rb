@@ -1,4 +1,6 @@
 class StaticPagesController < ApplicationController
+  before_action :authenticate_user! 
+
   def home
     @short = Short.new
     @short2 = Short.last

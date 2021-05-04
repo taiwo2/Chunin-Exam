@@ -12,10 +12,10 @@ RSpec.describe StaticPagesController, type: :controller do
   end
   
   
-  describe "GET #welcome" do
+  describe "GET #redirect" do
     it "returns http success" do
       allow(controller).to receive(:current_user).and_return(user)
-      get :welcome
+      get :redirect
       expect(response).to have_http_status(:success)
     end
   end

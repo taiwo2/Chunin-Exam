@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   get 'shorts/index'
   root 'static_pages#home'
   resources :shorts, only: %i[show create new]

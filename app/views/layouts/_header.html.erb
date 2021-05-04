@@ -15,7 +15,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
          <% if current_user %>
-          <li id='usuario'><h5>User: <%= current_user.email%></h5></li>
+          <li id='usuario'><h5><%= current_user.email%></h5></li>
          
           <li><%= link_to "Profile", edit_user_registration_path %></li>
           <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
